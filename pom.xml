@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sunego.commerce</groupId>
+	<artifactId>superviser</artifactId>
+	<version>${superviser.version}</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>superviser-common</module>
+		<module>superviser-dao</module>
+		<module>superviser-service</module>
+		<module>superviser-admin</module>
+		<module>superviser-app</module>
+	</modules>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<superviser.version>0.0.1-SNAPSHOT</superviser.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+
+		<spring.version>4.3.7.RELEASE</spring.version>
+		<junit.version>4.12</junit.version>
+		<lombok.version>1.16.8.0</lombok.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<scope>test</scope>
+				<version>${junit.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
