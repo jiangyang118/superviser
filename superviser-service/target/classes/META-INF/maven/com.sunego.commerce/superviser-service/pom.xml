@@ -7,10 +7,34 @@
 	<parent>
 		<groupId>com.sunego.commerce</groupId>
 		<artifactId>superviser</artifactId>
-		<version>${superviser.version}</version>
+		<version>1.0</version>
 	</parent>
 	<artifactId>superviser-service</artifactId>
 	<dependencies>
+		<dependency>
+			<groupId>com.sunego.commerce</groupId>
+			<artifactId>superviser-common</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sunego.commerce</groupId>
+			<artifactId>superviser-dao</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<!--分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

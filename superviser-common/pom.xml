@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.sunego.commerce</groupId>
 		<artifactId>superviser</artifactId>
-		<version>${superviser.version}</version>
+		<version>1.0</version>
 	</parent>
 	<artifactId>superviser-common</artifactId>
 	
