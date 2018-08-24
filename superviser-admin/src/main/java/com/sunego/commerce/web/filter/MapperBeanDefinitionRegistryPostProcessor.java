@@ -1,4 +1,4 @@
-package com.sunego.commerce.filter;
+package com.sunego.commerce.web.filter;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanDefinition;

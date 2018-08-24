@@ -9,6 +9,10 @@
 		<version>1.0</version>
 	</parent>
 	<artifactId>superviser-service</artifactId>
+	<properties>
+		<java.version>1.8</java.version>
+		<jdk.version>1.8</jdk.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.sunego.commerce</groupId>

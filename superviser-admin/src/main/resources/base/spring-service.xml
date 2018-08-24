@@ -92,10 +92,10 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	<bean id="mapperFilter" class="com.sunego.commerce.filter.MapperFilter" />
+	<bean id="mapperFilter" class="com.sunego.commerce.web.filter.MapperFilter" />
 
 	<bean
-		class="com.sunego.commerce.filter.MapperBeanDefinitionRegistryPostProcessor" />
+		class="com.sunego.commerce.web.filter.MapperBeanDefinitionRegistryPostProcessor" />
 
 
 	<!--perf4j 性能监控 begin -->

@@ -1,4 +1,4 @@
-package com.sunego.commerce.filter;
+package com.sunego.commerce.web.filter;
 
 import java.io.IOException;
 import java.util.List;
