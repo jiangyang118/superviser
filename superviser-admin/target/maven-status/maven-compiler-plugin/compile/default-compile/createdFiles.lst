@@ -1,3 +1,5 @@
-com\sunego\commerce\filter\MapperBeanDefinitionRegistryPostProcessor.class
-com\sunego\commerce\controller\demo\CountryController.class
+com\sunego\commerce\web\demo\CountryController.class
+com\sunego\commerce\web\interceptor\AccessLogInterceptor.class
 com\sunego\commerce\filter\MapperFilter.class
+com\sunego\commerce\web\interceptor\Perf4jInterceptor.class
+com\sunego\commerce\filter\MapperBeanDefinitionRegistryPostProcessor.class

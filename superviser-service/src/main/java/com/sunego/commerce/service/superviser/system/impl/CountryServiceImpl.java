@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.sunego.commerce.service.superviser.BaseServiceImpl;
+import com.sunego.commerce.service.superviser.log.LoggerManager;
 import com.sunego.commerce.service.superviser.system.CountryService;
 import com.sunego.commerce.superviser.entity.system.Country;
 
@@ -40,6 +41,7 @@ public class CountryServiceImpl extends BaseServiceImpl<Country> implements Coun
 
     @Override
     public List<Country> selectByCountry(Country country, int page, int rows) {
+        LoggerManager.info("CountryServiceImpl selectByCountry" + country);
         Example example = new Example(Country.class);
         Example.Criteria criteria = example.createCriteria();
         if (StringUtil.isNotEmpty(country.getCountryname())) {

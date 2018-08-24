@@ -1,4 +1,4 @@
-package com.sunego.commerce.controller.demo;
+package com.sunego.commerce.web.demo;
 
 import java.util.List;
 

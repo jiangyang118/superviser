@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd
@@ -21,8 +20,7 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 
-	<context:component-scan
-		base-package="com.sunego.commerce.controller" />
+	<context:component-scan base-package="com.sunego.commerce.web" />
 
 	<bean id="stringHttpMessageConverter"
 		class="org.springframework.http.converter.StringHttpMessageConverter" />
@@ -46,8 +44,7 @@
 		</property>
 	</bean>
 
-	<bean id="castorMarshaller"
-		class="org.springframework.oxm.castor.CastorMarshaller" />
+	<bean id="castorMarshaller" class="org.springframework.oxm.castor.CastorMarshaller" />
 	<!--信息转换 - 结束 -->
 
 	<bean id="contentNegotiationManagerFactoryBean"
@@ -94,8 +91,7 @@
 			<list>
 				<bean
 					class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
-				<bean
-					class="org.springframework.web.servlet.view.xml.MarshallingView">
+				<bean class="org.springframework.web.servlet.view.xml.MarshallingView">
 					<property name="marshaller" ref="castorMarshaller" />
 				</bean>
 			</list>
@@ -112,6 +108,15 @@
 			</list>
 		</property>
 	</bean>
+
+	<!-- 拦截器栈 -->
+	<mvc:interceptors>
+		<!-- 访问日志拦截器，记录访日日志 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.sunego.commerce.web.interceptor.AccessLogInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 	<!--文件上传 -->
 	<bean id="multipartResolver"

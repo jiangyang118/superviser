@@ -1,4 +1,5 @@
-com\sunego\commerce\superviser\service\system\CountryService.class
-com\sunego\commerce\superviser\service\BaseServiceImpl.class
-com\sunego\commerce\superviser\service\system\impl\CountryServiceImpl.class
-com\sunego\commerce\superviser\service\BaseService.class
+com\sunego\commerce\service\superviser\system\CountryService.class
+com\sunego\commerce\service\superviser\BaseService.class
+com\sunego\commerce\service\superviser\BaseServiceImpl.class
+com\sunego\commerce\service\superviser\log\LoggerManager.class
+com\sunego\commerce\service\superviser\system\impl\CountryServiceImpl.class
