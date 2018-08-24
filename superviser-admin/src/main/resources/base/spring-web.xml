@@ -140,4 +140,8 @@
 		</property>
 	</bean>
 	<!--perf4j 性能监控 end -->
+
+	<mvc:resources mapping="/swagger/**" location="/WEB-INF/swagger/"
+		cache-period="31556926" />
+	<bean class="com.sunego.commerce.web.config.SwaggerConfig" />
 </beans>

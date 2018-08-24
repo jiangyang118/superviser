@@ -33,7 +33,7 @@
 		<junit.version>4.12</junit.version>
 		<lombok.version>1.16.18</lombok.version>
 		<commons-jexl.version>1.1</commons-jexl.version>
-		<guava.version>15.0</guava.version>
+		<guava.version>18.0</guava.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -66,6 +66,12 @@
 				<version>${logback.version}</version>
 			</dependency>
 			<!-- 日志end -->
+				<!-- json -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.38</version>
+		</dependency>
 			<!--web -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
@@ -243,6 +249,18 @@
 				<artifactId>mapper</artifactId>
 				<version>${mapper.version}</version>
 			</dependency>
+
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>2.4.0</version>
+			</dependency>
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>2.4.0</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-framework-bom</artifactId>
