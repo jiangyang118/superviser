@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="LOG_HOME" value="${java.io.tmpdir}/../logs/" />
+	<appender name="console"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{60} -
+				%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{60} -
+				%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/superviser-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<root level="debug">
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+
+	<!--common层日志begin -->
+	<appender name="COMMON_LOG_INFO"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss}|%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sv-common-info-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<appender name="COMMON_LOG_ERROR"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss}|%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sv-common-error-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<logger name="COMMON_LOG_INFO" level="INFO" additivity="false">
+		<appender-ref ref="COMMON_LOG_INFO" />
+	</logger>
+	<logger name="COMMON_LOG_ERROR" level="ERROR" additivity="false">
+		<appender-ref ref="COMMON_LOG_ERROR" />
+	</logger>
+	<!--common层日志 end -->
+
+	<!--应用业务日志 begin -->
+	<appender name="SV_BIZ_LOG_INFO"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss}|%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sv-biz-info-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<appender name="SV_BIZ_LOG_ERROR"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss}|%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sv-biz-error-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<logger name="SV_BIZ_LOG_INFO" level="INFO" additivity="false">
+		<appender-ref ref="SV_BIZ_LOG_INFO" />
+	</logger>
+	<logger name="SV_BIZ_LOG_ERROR" level="ERROR" additivity="false">
+		<appender-ref ref="SV_BIZ_LOG_ERROR" />
+	</logger>
+	<!--应用业务日志 end -->
+
+
+	<!--系统级别访问日志 begin -->
+	<appender name="SV_ACCESS_LOG"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss}|%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sv-access-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<logger name="SV_ACCESS_LOG" level="INFO" additivity="false">
+		<appender-ref ref="SV_ACCESS_LOG" />
+	</logger>
+	<!--系统级别访问日志 end -->
+
+	<!-- 性能日志 begin -->
+	<appender name="singlePerf4jAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{60} -
+				%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sv-perf4j-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<appender name="filePerf4jAppender"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<encoder
+			class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{60} -
+				%msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_HOME}/sv-coalescing-statistics-info_%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<maxHistory>90</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<appender name="coalescingStatistics"
+		class="org.perf4j.logback.AsyncCoalescingStatisticsAppender">
+		<param name="timeSlice" value="600000" />
+		<appender-ref ref="filePerf4jAppender" />
+	</appender>
+	<logger name="jdbc.sqltiming" level="INFO" />
+	<logger name="org.perf4j.TimingLogger" level="INFO"
+		additivity="false">
+		<appender-ref ref="coalescingStatistics" />
+		<appender-ref ref="singlePerf4jAppender" />
+	</logger>
+	<!-- 性能日志 end -->
+
+</configuration>
